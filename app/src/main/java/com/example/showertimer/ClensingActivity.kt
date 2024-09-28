@@ -23,6 +23,10 @@ class ClensingActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         var count = binding.tvClensingTime.text.toString().toIntOrNull() ?: 0
+        val toothTime = intent.getIntExtra("양치 시간", 3)
+        val showerTime = intent.getIntExtra("샤워 시간", 15)
+        val shampooTime = intent.getIntExtra("샴푸 시간", 5)
+        val shavingTime = intent.getIntExtra("면도 시간", 3)
 
         // "+" 버튼 클릭 리스너
         binding.ivClensingPlusBtn.setOnClickListener {
@@ -40,11 +44,6 @@ class ClensingActivity : AppCompatActivity() {
             binding.tvClensingTime.text = count.toString()
         }
 
-        binding.ibClensingNext.setOnClickListener {
-            val intent = Intent(this, InitialInfoActivity::class.java)
-            startActivity(intent)
-        }
-
         binding.ivInitialClensingCheckOff.setOnClickListener {
             binding.ivInitialClensingCheckOff.visibility = View.GONE
             binding.ivInitialClensingCheckOn.visibility = View.VISIBLE
@@ -55,6 +54,16 @@ class ClensingActivity : AppCompatActivity() {
             binding.ivInitialClensingCheckOff.visibility = View.VISIBLE
             binding.ivInitialClensingCheckOn.visibility = View.GONE
             IsClensing = true
+        }
+
+        binding.ibClensingNext.setOnClickListener {
+            val intent = Intent(this, InitialInfoActivity::class.java)
+            intent.putExtra("클랜징 시간", count)
+            intent.putExtra("양치 시간", toothTime)
+            intent.putExtra("샤워 시간", showerTime)
+            intent.putExtra("샴푸 시간", shampooTime)
+            intent.putExtra("면도 시간", shavingTime)
+            startActivity(intent)
         }
 
     }

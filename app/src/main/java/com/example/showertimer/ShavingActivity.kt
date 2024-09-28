@@ -22,6 +22,9 @@ class ShavingActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         var count = binding.tvShavingTime.text.toString().toIntOrNull() ?: 0
+        val toothTime = intent.getIntExtra("양치 시간", 3)
+        val showerTime = intent.getIntExtra("샤워 시간", 15)
+        val shampooTime = intent.getIntExtra("샴푸 시간", 5)
 
         // "+" 버튼 클릭 리스너
         binding.ivShavingPlusBtn.setOnClickListener {
@@ -53,6 +56,10 @@ class ShavingActivity : AppCompatActivity() {
 
         binding.ibShavingNext.setOnClickListener {
             val intent = Intent(this, ClensingActivity::class.java)
+            intent.putExtra("면도 시간", count)
+            intent.putExtra("양치 시간", toothTime)
+            intent.putExtra("샤워 시간", showerTime)
+            intent.putExtra("샴푸 시간", shampooTime)
             startActivity(intent)
         }
 

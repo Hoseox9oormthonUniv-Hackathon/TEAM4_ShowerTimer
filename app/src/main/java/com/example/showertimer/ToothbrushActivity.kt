@@ -51,6 +51,7 @@ class ToothbrushActivity : AppCompatActivity() {
 
         binding.ibToothNext.setOnClickListener {
             val intent = Intent(this, ShowerActivity::class.java)
+            intent.putExtra("양치 시간", count)
             startActivity(intent)
         }
     }
