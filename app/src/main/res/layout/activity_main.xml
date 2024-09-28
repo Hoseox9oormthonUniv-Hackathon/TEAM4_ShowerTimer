@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,13 +8,93 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- 질문 텍스트 -->
     <TextView
+        android:id="@+id/tv_toothbrush_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="100dp"
+        android:text="당신의 양치 시간은 어떻게 되나요?"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/iv_toothbrush"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 칫솔 이미지 -->
+    <ImageView
+        android:id="@+id/iv_toothbrush"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/initial_toothbrush"
+        app:layout_constraintBottom_toTopOf="@+id/tv_toothbrush_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- 마이너스 버튼 -->
+
+    <ImageView
+        android:id="@+id/iv_minus_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="50dp"
+        android:src="@drawable/initial_minus_btn"
+        app:layout_constraintTop_toBottomOf="@+id/iv_toothbrush"
+        app:layout_constraintEnd_toStartOf="@+id/tv_toothbrush_time"
+        android:layout_marginTop="100dp" />
+
+    <TextView
+        android:id="@+id/tv_toothbrush_time"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="104dp"
+        android:text="3"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_toothbrush" />
+
+    <ImageView
+        android:id="@+id/iv_plus_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/initial_plus_btn"
+        app:layout_constraintStart_toEndOf="@+id/tv_toothbrush_time"
+        app:layout_constraintTop_toBottomOf="@+id/iv_toothbrush" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/initial_check_off"
+        app:layout_constraintTop_toBottomOf="@id/iv_minus_btn"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="120dp"/>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/initial_check_on"
+        app:layout_constraintTop_toBottomOf="@id/iv_minus_btn"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="120dp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="샤워할 때 안 해요"
+        app:layout_constraintTop_toBottomOf="@+id/iv_minus_btn"
+        android:layout_marginTop="45dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="20dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
