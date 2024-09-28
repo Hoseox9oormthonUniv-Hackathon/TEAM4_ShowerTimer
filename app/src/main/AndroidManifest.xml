@@ -21,6 +21,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ToothbrushActivity"/>
+        <activity android:name=".ShowerActivity"/>
+        <activity android:name=".ShavingActivity"/>
+        <activity android:name=".ShampooActivity"/>
+        <activity android:name=".ClensingActivity"/>
+        <activity android:name=".InitialInfoActivity"/>
+
     </application>
 
 </manifest>
