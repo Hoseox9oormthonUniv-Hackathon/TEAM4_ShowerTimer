@@ -27,6 +27,8 @@
         <activity android:name=".ShampooActivity"/>
         <activity android:name=".CleansingActivity"/>
         <activity android:name=".InitialInfoActivity"/>
+        <activity android:name=".ConfirmActivity"/>
+        <activity android:name=".StartActivity"/>
         <activity
             android:name=".SplashActivity"
             android:exported="true">
