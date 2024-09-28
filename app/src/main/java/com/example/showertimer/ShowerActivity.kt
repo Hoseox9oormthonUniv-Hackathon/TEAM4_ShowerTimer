@@ -21,7 +21,6 @@ class ShowerActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         var count = binding.tvShowerTime.text.toString().toIntOrNull() ?: 0
-        val toothTime = intent.getIntExtra("양치 시간", 3)
 
         // "+" 버튼 클릭 리스너
         binding.ivShowerPlusBtn.setOnClickListener {
@@ -42,7 +41,6 @@ class ShowerActivity : AppCompatActivity() {
         binding.ibShowerNext.setOnClickListener {
             val intent = Intent(this, ShampooActivity::class.java)
             intent.putExtra("샤워 시간", count)
-            intent.putExtra("양치 시간", toothTime)
             startActivity(intent)
         }
 

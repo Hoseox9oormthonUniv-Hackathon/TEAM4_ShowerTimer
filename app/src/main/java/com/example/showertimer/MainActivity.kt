@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         val startBtn = findViewById<ImageButton>(R.id.ib_start)
         startBtn.setOnClickListener {
-            val intent = Intent(this, ToothbrushActivity::class.java)
+            val intent = Intent(this, ShowerActivity::class.java)
             startActivity(intent)
         }
     }

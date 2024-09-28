@@ -3,8 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
     <!-- 질문 텍스트 -->
     <TextView
@@ -13,21 +15,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:layout_marginBottom="100dp"
-        android:text="당신의 면도 시간은 어떻게 되나요?"
+        android:text="면도를 얼마나 하시나요? (4/5)"
+        android:fontFamily="@font/applesdgothicneob"
         android:textStyle="bold"
-        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/iv_shaving"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="30dp"/>
 
-    <!-- 샤워 이미지 -->
-
+    <!-- 칫솔 이미지 -->
     <ImageView
         android:id="@+id/iv_shaving"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="68dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="8dp"
         android:src="@drawable/initial_shaving"
         app:layout_constraintBottom_toTopOf="@+id/tv_shaving_time"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,13 +39,13 @@
     <!-- 마이너스 버튼 -->
     <ImageButton
         android:id="@+id/iv_shaving_minus_btn"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_marginEnd="50dp"
         android:src="@drawable/initial_minus_btn"
         app:layout_constraintTop_toBottomOf="@+id/iv_shaving"
         app:layout_constraintEnd_toStartOf="@+id/tv_shaving_time"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="110dp"
         android:adjustViewBounds="true"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"/>
@@ -55,6 +58,7 @@
         android:text="3"
         android:textAlignment="center"
         android:textSize="30sp"
+        android:fontFamily="@font/applesdgothicneob"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_shaving" />
@@ -67,16 +71,17 @@
         android:text="분"
         android:textAlignment="center"
         android:textSize="20sp"
+        android:fontFamily="@font/applesdgothicneob"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_shaving" />
 
     <ImageButton
         android:id="@+id/iv_shaving_plus_btn"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="110dp"
         android:src="@drawable/initial_plus_btn"
         app:layout_constraintStart_toEndOf="@+id/tv_shaving_time"
         app:layout_constraintTop_toBottomOf="@+id/iv_shaving"
@@ -114,29 +119,43 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="샤워할 때 안 해요"
+        android:text="면도를 하지 않아요"
+        android:fontFamily="@font/applesdgothicneob"
         app:layout_constraintTop_toBottomOf="@+id/iv_shaving_minus_btn"
         android:layout_marginTop="45dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginLeft="20dp"/>
 
-    <ImageButton
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:id="@+id/ib_shaving_next"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:src="@drawable/initial_next"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="30dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="다음"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <!-- 이미지 버튼 -->
+        <ImageButton
+            android:id="@+id/ib_shaving_next"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/start_start_btn"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"/>
+
+        <!-- 이미지 버튼 위에 겹칠 텍스트 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="다음"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:fontFamily="@font/applesdgothicneob"
+            android:layout_gravity="center"/>
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
