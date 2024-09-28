@@ -7,7 +7,7 @@
 
     <!-- 질문 텍스트 -->
     <TextView
-        android:id="@+id/tv_clensing_question"
+        android:id="@+id/tv_cleanser_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
@@ -15,7 +15,7 @@
         android:text="당신의 세안 시간은 어떻게 되나요?"
         android:textStyle="bold"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/iv_clensing"
+        app:layout_constraintBottom_toTopOf="@+id/iv_cleanser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,31 +23,31 @@
     <!-- 샤워 이미지 -->
 
     <ImageView
-        android:id="@+id/iv_clensing"
+        android:id="@+id/iv_cleanser"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginBottom="68dp"
-        android:src="@drawable/initial_shampoo"
-        app:layout_constraintBottom_toTopOf="@+id/tv_clensing_time"
+        android:src="@drawable/initial_cleanser"
+        app:layout_constraintBottom_toTopOf="@+id/tv_cleanser_time"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <!-- 마이너스 버튼 -->
     <ImageButton
-        android:id="@+id/iv_clensing_minus_btn"
+        android:id="@+id/iv_cleanser_minus_btn"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginEnd="50dp"
         android:src="@drawable/initial_minus_btn"
-        app:layout_constraintTop_toBottomOf="@+id/iv_clensing"
-        app:layout_constraintEnd_toStartOf="@+id/tv_clensing_time"
+        app:layout_constraintTop_toBottomOf="@+id/iv_cleanser"
+        app:layout_constraintEnd_toStartOf="@+id/tv_cleanser_time"
         android:layout_marginTop="100dp"
         android:adjustViewBounds="true"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"/>
 
     <TextView
-        android:id="@+id/tv_clensing_time"
+        android:id="@+id/tv_cleanser_time"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="104dp"
@@ -56,7 +56,7 @@
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_clensing" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_cleanser" />
     <TextView
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -67,17 +67,17 @@
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_clensing" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_cleanser" />
 
     <ImageButton
-        android:id="@+id/iv_clensing_plus_btn"
+        android:id="@+id/iv_cleanser_plus_btn"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="100dp"
         android:src="@drawable/initial_plus_btn"
-        app:layout_constraintStart_toEndOf="@+id/tv_clensing_time"
-        app:layout_constraintTop_toBottomOf="@+id/iv_clensing"
+        app:layout_constraintStart_toEndOf="@+id/tv_cleanser_time"
+        app:layout_constraintTop_toBottomOf="@+id/iv_cleanser"
         android:adjustViewBounds="true"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"/>
@@ -85,9 +85,9 @@
     <ImageButton
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:id="@+id/iv_initial_clensing_check_off"
+        android:id="@+id/iv_initial_cleanser_check_off"
         android:src="@drawable/initial_check_off"
-        app:layout_constraintTop_toBottomOf="@id/iv_clensing_minus_btn"
+        app:layout_constraintTop_toBottomOf="@id/iv_cleanser_minus_btn"
         android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="120dp"
@@ -98,9 +98,9 @@
     <ImageButton
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:id="@+id/iv_initial_clensing_check_on"
+        android:id="@+id/iv_initial_cleanser_check_on"
         android:src="@drawable/initial_check_on"
-        app:layout_constraintTop_toBottomOf="@id/iv_clensing_minus_btn"
+        app:layout_constraintTop_toBottomOf="@id/iv_cleanser_minus_btn"
         android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="120dp"
@@ -113,7 +113,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="샤워할 때 안 해요"
-        app:layout_constraintTop_toBottomOf="@+id/iv_clensing_minus_btn"
+        app:layout_constraintTop_toBottomOf="@+id/iv_cleanser_minus_btn"
         android:layout_marginTop="45dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -122,7 +122,7 @@
     <ImageButton
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:id="@+id/ib_clensing_next"
+        android:id="@+id/ib_cleanser_next"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:src="@drawable/initial_next"/>

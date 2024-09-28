@@ -28,6 +28,7 @@ class InitialInfoActivity : AppCompatActivity() {
         var clensingTime = intent.getIntExtra("세안 시간", 2)
 
         Toast.makeText(this, "양치 시간: $toothTime, 샤워 시간: $showerTime", Toast.LENGTH_SHORT).show()
+        binding.tvToothTimeInfo.text = toothTime.toString() + "분"
         binding.tvShowerTimeInfo.text = showerTime.toString() + "분"
 
 

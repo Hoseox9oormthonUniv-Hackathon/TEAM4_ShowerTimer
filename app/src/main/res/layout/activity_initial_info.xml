@@ -87,7 +87,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_toothbrush_time_info"
+        android:id="@+id/tv_tooth_time_info"
         android:text="3분"
         app:layout_constraintStart_toEndOf="@+id/tv_toothbrush_info"
         app:layout_constraintTop_toBottomOf="@+id/tv_info"
@@ -101,6 +101,131 @@
         android:src="@drawable/initial_edit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_info"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="300dp"/>
+
+    <!---->
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="70dp"
+        android:id="@+id/iv_shampoo_info"
+        android:src="@drawable/initial_shampoo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shower_info"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="90dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_shampoo_info"
+        android:text="샴푸"
+        app:layout_constraintStart_toEndOf="@+id/iv_toothbrush_info"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shower_info"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="40dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_shampoo_time_info"
+        android:text="5분"
+        app:layout_constraintStart_toEndOf="@+id/tv_toothbrush_info"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shower_info"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"/>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:id="@+id/iv_shampoo_edit"
+        android:src="@drawable/initial_edit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shower_info"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="300dp"/>
+
+    <!---->
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="70dp"
+        android:id="@+id/iv_shaving_info"
+        android:src="@drawable/initial_shaving"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shampoo_info"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="90dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_shaving_info"
+        android:text="면도"
+        app:layout_constraintStart_toEndOf="@+id/iv_toothbrush_info"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shampoo_info"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="40dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_shaving_time_info"
+        android:text="3분"
+        app:layout_constraintStart_toEndOf="@+id/tv_toothbrush_info"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shampoo_info"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"/>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:id="@+id/iv_shaving_edit"
+        android:src="@drawable/initial_edit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shampoo_info"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="300dp"/>
+
+    <!---->
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="70dp"
+        android:id="@+id/iv_clensing_info"
+        android:src="@drawable/initial_cleanser"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shaving_info"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="90dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_cleanser_info"
+        android:text="세안"
+        app:layout_constraintStart_toEndOf="@+id/iv_toothbrush_info"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shaving_info"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="40dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_cleanser_time_info"
+        android:text="3분"
+        app:layout_constraintStart_toEndOf="@+id/tv_toothbrush_info"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shaving_info"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"/>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:id="@+id/iv_cleanser_edit"
+        android:src="@drawable/initial_edit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shaving_info"
         android:layout_marginTop="40dp"
         android:layout_marginStart="300dp"/>
 

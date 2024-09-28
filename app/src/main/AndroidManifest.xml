@@ -25,7 +25,7 @@
         <activity android:name=".ShowerActivity"/>
         <activity android:name=".ShavingActivity"/>
         <activity android:name=".ShampooActivity"/>
-        <activity android:name=".ClensingActivity"/>
+        <activity android:name=".CleansingActivity"/>
         <activity android:name=".InitialInfoActivity"/>
 
     </application>

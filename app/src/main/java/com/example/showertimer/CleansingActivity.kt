@@ -5,58 +5,55 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.showertimer.databinding.ActivityClensingBinding
-import com.example.showertimer.databinding.ActivityShavingBinding
-import com.example.showertimer.databinding.ActivityShowerBinding
-import com.example.showertimer.databinding.ActivityToothbrushBinding
+import com.example.showertimer.databinding.ActivityCleansingBinding
 
-class ClensingActivity : AppCompatActivity() {
+class CleansingActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityClensingBinding
+    private lateinit var binding: ActivityCleansingBinding
     private var IsClensing = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         // ViewBinding 초기화
-        binding = ActivityClensingBinding.inflate(layoutInflater)
+        binding = ActivityCleansingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var count = binding.tvClensingTime.text.toString().toIntOrNull() ?: 0
+        var count = binding.tvCleanserTime.text.toString().toIntOrNull() ?: 0
         val toothTime = intent.getIntExtra("양치 시간", 3)
         val showerTime = intent.getIntExtra("샤워 시간", 15)
         val shampooTime = intent.getIntExtra("샴푸 시간", 5)
         val shavingTime = intent.getIntExtra("면도 시간", 3)
 
         // "+" 버튼 클릭 리스너
-        binding.ivClensingPlusBtn.setOnClickListener {
+        binding.ivCleanserPlusBtn.setOnClickListener {
             count++
-            binding.tvClensingTime.text = count.toString()
+            binding.tvCleanserTime.text = count.toString()
         }
 
         // "-" 버튼 클릭 리스너
-        binding.ivClensingMinusBtn.setOnClickListener {
+        binding.ivCleanserMinusBtn.setOnClickListener {
             count--
             if (count < 0) {
                 Toast.makeText(this, "0 미만은 입력할 수 없어요", Toast.LENGTH_SHORT).show()
                 count = 0
             }
-            binding.tvClensingTime.text = count.toString()
+            binding.tvCleanserTime.text = count.toString()
         }
 
-        binding.ivInitialClensingCheckOff.setOnClickListener {
-            binding.ivInitialClensingCheckOff.visibility = View.GONE
-            binding.ivInitialClensingCheckOn.visibility = View.VISIBLE
+        binding.ivInitialCleanserCheckOff.setOnClickListener {
+            binding.ivInitialCleanserCheckOff.visibility = View.GONE
+            binding.ivInitialCleanserCheckOn.visibility = View.VISIBLE
             IsClensing = false
         }
 
-        binding.ivInitialClensingCheckOn.setOnClickListener {
-            binding.ivInitialClensingCheckOff.visibility = View.VISIBLE
-            binding.ivInitialClensingCheckOn.visibility = View.GONE
+        binding.ivInitialCleanserCheckOn.setOnClickListener {
+            binding.ivInitialCleanserCheckOff.visibility = View.VISIBLE
+            binding.ivInitialCleanserCheckOn.visibility = View.GONE
             IsClensing = true
         }
 
-        binding.ibClensingNext.setOnClickListener {
+        binding.ibCleanserNext.setOnClickListener {
             val intent = Intent(this, InitialInfoActivity::class.java)
             intent.putExtra("클랜징 시간", count)
             intent.putExtra("양치 시간", toothTime)

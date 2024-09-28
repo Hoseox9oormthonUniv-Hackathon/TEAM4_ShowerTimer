@@ -6,8 +6,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.showertimer.databinding.ActivityShavingBinding
-import com.example.showertimer.databinding.ActivityShowerBinding
-import com.example.showertimer.databinding.ActivityToothbrushBinding
 
 class ShavingActivity : AppCompatActivity() {
 
@@ -55,7 +53,7 @@ class ShavingActivity : AppCompatActivity() {
         }
 
         binding.ibShavingNext.setOnClickListener {
-            val intent = Intent(this, ClensingActivity::class.java)
+            val intent = Intent(this, CleansingActivity::class.java)
             intent.putExtra("면도 시간", count)
             intent.putExtra("양치 시간", toothTime)
             intent.putExtra("샤워 시간", showerTime)
