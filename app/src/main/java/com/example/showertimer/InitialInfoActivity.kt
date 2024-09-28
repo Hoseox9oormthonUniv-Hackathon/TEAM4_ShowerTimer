@@ -25,11 +25,14 @@ class InitialInfoActivity : AppCompatActivity() {
         var showerTime = intent.getIntExtra("샤워 시간", 15)
         var shampooTime = intent.getIntExtra("샴푸 시간", 5)
         var shavingTime = intent.getIntExtra("면도 시간", 3)
-        var clensingTime = intent.getIntExtra("세안 시간", 2)
+        var cleansingTime = intent.getIntExtra("세안 시간", 2)
 
         Toast.makeText(this, "양치 시간: $toothTime, 샤워 시간: $showerTime", Toast.LENGTH_SHORT).show()
         binding.tvToothTimeInfo.text = toothTime.toString() + "분"
         binding.tvShowerTimeInfo.text = showerTime.toString() + "분"
+        binding.tvShampooTimeInfo.text = shampooTime.toString() + "분"
+        binding.tvShavingTimeInfo.text = shavingTime.toString() + "분"
+        binding.tvCleanserTimeInfo.text = cleansingTime.toString() + "분"
 
 
     }

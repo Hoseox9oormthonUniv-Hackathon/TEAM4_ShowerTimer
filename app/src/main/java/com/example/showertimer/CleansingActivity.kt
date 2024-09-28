@@ -55,7 +55,7 @@ class CleansingActivity : AppCompatActivity() {
 
         binding.ibCleanserNext.setOnClickListener {
             val intent = Intent(this, InitialInfoActivity::class.java)
-            intent.putExtra("클랜징 시간", count)
+            intent.putExtra("세안 시간", count)
             intent.putExtra("양치 시간", toothTime)
             intent.putExtra("샤워 시간", showerTime)
             intent.putExtra("샴푸 시간", shampooTime)
