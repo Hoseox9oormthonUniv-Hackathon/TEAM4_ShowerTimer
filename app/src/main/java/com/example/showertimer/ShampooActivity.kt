@@ -11,7 +11,7 @@ import com.example.showertimer.databinding.ActivityToothbrushBinding
 class ShampooActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityShampooBinding
-    private var IsShampoo = true
+    private var isShampoo = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,13 +43,13 @@ class ShampooActivity : AppCompatActivity() {
         binding.ivInitialShampooCheckOff.setOnClickListener {
             binding.ivInitialShampooCheckOff.visibility = View.GONE
             binding.ivInitialShampooCheckOn.visibility = View.VISIBLE
-            IsShampoo = false
+            isShampoo = false
         }
 
         binding.ivInitialShampooCheckOn.setOnClickListener {
             binding.ivInitialShampooCheckOff.visibility = View.VISIBLE
             binding.ivInitialShampooCheckOn.visibility = View.GONE
-            IsShampoo = true
+            isShampoo = true
         }
 
 
@@ -57,7 +57,14 @@ class ShampooActivity : AppCompatActivity() {
             val intent = Intent(this, CleansingActivity::class.java)
             intent.putExtra("샤워 시간", showerTime)
             intent.putExtra("샴푸 시간", count)
+            intent.putExtra("샴푸 여부", isShampoo)
             startActivity(intent)
+        }
+
+        binding.ibShampooBack.setOnClickListener {
+            val intent = Intent(this, ShowerActivity::class.java)
+            startActivity(intent);
+            overridePendingTransition(R.anim.none, R.anim.none)
         }
     }
 }

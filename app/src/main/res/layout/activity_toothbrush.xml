@@ -25,6 +25,19 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginLeft="30dp"/>
 
+    <ImageButton
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/ib_tooth_back"
+        android:src="@drawable/initial_back"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"/>
+
     <!-- 칫솔 이미지 -->
     <ImageView
         android:id="@+id/iv_toothbrush"

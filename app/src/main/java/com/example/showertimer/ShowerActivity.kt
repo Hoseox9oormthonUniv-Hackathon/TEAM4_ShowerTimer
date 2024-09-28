@@ -44,5 +44,11 @@ class ShowerActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.ibShowerBack.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.none, R.anim.none)
+        }
+
     }
 }

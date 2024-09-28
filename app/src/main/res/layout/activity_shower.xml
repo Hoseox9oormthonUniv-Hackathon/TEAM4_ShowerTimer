@@ -8,6 +8,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageButton
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/ib_shower_back"
+        android:src="@drawable/initial_back"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"/>
+
     <!-- 질문 텍스트 -->
     <TextView
         android:id="@+id/tv_shower_question"
@@ -92,32 +105,33 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="30dp"
+        android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_marginBottom="30dp">
 
         <!-- 이미지 버튼 -->
         <ImageButton
             android:id="@+id/ib_shower_next"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:src="@drawable/start_start_btn"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
-            android:src="@drawable/start_start_btn" />
+            android:scaleType="fitCenter"/>
 
         <!-- 이미지 버튼 위에 겹칠 텍스트 -->
         <TextView
-            android:id="@+id/tv_button_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/applesdgothicneob"
             android:text="다음"
-            android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:fontFamily="@font/applesdgothicneob"
+            android:layout_gravity="center"/>
+
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,7 +10,7 @@ import com.example.showertimer.databinding.ActivityToothbrushBinding
 class ToothbrushActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityToothbrushBinding
-    private var IsToothbrush = true
+    private var isToothbrush = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,10 +20,14 @@ class ToothbrushActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         var count = binding.tvToothbrushTime.text.toString().toIntOrNull() ?: 0
-        val toothTime = intent.getIntExtra("세안 시간", 2)
         val showerTime = intent.getIntExtra("샤워 시간", 15)
         val shampooTime = intent.getIntExtra("샴푸 시간", 5)
         val shavingTime = intent.getIntExtra("면도 시간", 3)
+        val cleansingTime = intent.getIntExtra("세안 시간", 2)
+
+        val isCleansing = intent.getBooleanExtra("세안 여부", true)
+        val isShampoo = intent.getBooleanExtra("샴푸 여부", true)
+        val isShaving = intent.getBooleanExtra("면도 여부", true)
 
         // "+" 버튼 클릭 리스너
         binding.ivToothbrushPlusBtn.setOnClickListener {
@@ -44,23 +48,34 @@ class ToothbrushActivity : AppCompatActivity() {
         binding.ivInitialToothbrushCheckOff.setOnClickListener {
             binding.ivInitialToothbrushCheckOff.visibility = View.GONE
             binding.ivInitialToothbrushCheckOn.visibility = View.VISIBLE
-            IsToothbrush = false
+            isToothbrush = false
         }
 
         binding.ivInitialToothbrushCheckOn.setOnClickListener {
             binding.ivInitialToothbrushCheckOff.visibility = View.VISIBLE
             binding.ivInitialToothbrushCheckOn.visibility = View.GONE
-            IsToothbrush = true
+            isToothbrush = true
         }
 
         binding.ibToothbrushNext.setOnClickListener {
             val intent = Intent(this, InitialInfoActivity::class.java)
             intent.putExtra("양치 시간", count)
-            intent.putExtra("세안 시간", toothTime)
+            intent.putExtra("세안 시간", cleansingTime)
             intent.putExtra("샤워 시간", showerTime)
             intent.putExtra("샴푸 시간", shampooTime)
             intent.putExtra("면도 시간", shavingTime)
+            
+            intent.putExtra("샴푸 여부", isShampoo)
+            intent.putExtra("세안 여부", isCleansing)
+            intent.putExtra("면도 여부", isShaving)
+            intent.putExtra("양치 여부", isToothbrush)
             startActivity(intent)
+        }
+
+        binding.ibToothBack.setOnClickListener {
+            val intent = Intent(this, ShavingActivity::class.java)
+            startActivity(intent);
+            overridePendingTransition(R.anim.none, R.anim.none)
         }
     }
 }

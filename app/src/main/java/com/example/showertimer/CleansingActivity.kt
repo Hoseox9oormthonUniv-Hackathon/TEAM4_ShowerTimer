@@ -10,7 +10,7 @@ import com.example.showertimer.databinding.ActivityCleansingBinding
 class CleansingActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCleansingBinding
-    private var IsClensing = true
+    private var isCleansing = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +22,7 @@ class CleansingActivity : AppCompatActivity() {
         var count = binding.tvCleanserTime.text.toString().toIntOrNull() ?: 0
         val showerTime = intent.getIntExtra("샤워 시간", 15)
         val shampooTime = intent.getIntExtra("샴푸 시간", 5)
+        val isShampoo = intent.getBooleanExtra("샴푸 여부", true)
 
         // "+" 버튼 클릭 리스너
         binding.ivCleanserPlusBtn.setOnClickListener {
@@ -42,13 +43,13 @@ class CleansingActivity : AppCompatActivity() {
         binding.ivInitialCleanserCheckOff.setOnClickListener {
             binding.ivInitialCleanserCheckOff.visibility = View.GONE
             binding.ivInitialCleanserCheckOn.visibility = View.VISIBLE
-            IsClensing = false
+            isCleansing = false
         }
 
         binding.ivInitialCleanserCheckOn.setOnClickListener {
             binding.ivInitialCleanserCheckOff.visibility = View.VISIBLE
             binding.ivInitialCleanserCheckOn.visibility = View.GONE
-            IsClensing = true
+            isCleansing = true
         }
 
         binding.ibCleanserNext.setOnClickListener {
@@ -56,7 +57,15 @@ class CleansingActivity : AppCompatActivity() {
             intent.putExtra("세안 시간", count)
             intent.putExtra("샤워 시간", showerTime)
             intent.putExtra("샴푸 시간", shampooTime)
+            intent.putExtra("샴푸 여부", isShampoo)
+            intent.putExtra("세안 여부", isCleansing)
             startActivity(intent)
+        }
+
+        binding.ibCleansingBack.setOnClickListener {
+            val intent = Intent(this, ShampooActivity::class.java)
+            startActivity(intent);
+            overridePendingTransition(R.anim.none, R.anim.none)
         }
 
     }
