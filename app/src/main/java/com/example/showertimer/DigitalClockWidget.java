@@ -1,7 +1,9 @@
 package com.example.showertimer;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
@@ -16,10 +18,10 @@ import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link DigitalTimerWidget#newInstance} factory method to
+ * Use the {@link DigitalClockWidget#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DigitalTimerWidget extends Fragment {
+public class DigitalClockWidget extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +36,7 @@ public class DigitalTimerWidget extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public DigitalTimerWidget() {
+    public DigitalClockWidget() {
         // Required empty public constructor
     }
 
@@ -47,8 +49,8 @@ public class DigitalTimerWidget extends Fragment {
      * @return A new instance of fragment DigitalTimerWidget.
      */
     // TODO: Rename and change types and number of parameters
-    public static DigitalTimerWidget newInstance(String param1, String param2) {
-        DigitalTimerWidget fragment = new DigitalTimerWidget();
+    public static DigitalClockWidget newInstance(String param1, String param2) {
+        DigitalClockWidget fragment = new DigitalClockWidget();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
