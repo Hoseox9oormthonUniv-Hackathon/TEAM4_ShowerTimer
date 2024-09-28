@@ -2,6 +2,7 @@ package com.example.showertimer
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -50,5 +51,14 @@ class ShowerActivity : AppCompatActivity() {
             overridePendingTransition(R.anim.none, R.anim.none)
         }
 
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            finish()
+            overridePendingTransition(R.anim.none, R.anim.none)
+            return true // 이벤트를 여기서 처리했음을 반환
+        }
+        return super.onKeyDown(keyCode, event)
     }
 }
