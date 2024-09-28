@@ -32,16 +32,19 @@ public class Widget extends AppCompatActivity {
         fragments.add(TimerWidget.newInstance("test","test"));
         fragments.add(WeatherWidget.newInstance("test","test"));
         fragments.add(CalendarWidget.newInstance("TEST","TEST"));
+        fragments.add(DigitalTimerWidget.newInstance("TEST","TEST"));
 
         ArrayList<Fragment> fragments1 = new ArrayList<>();
         fragments1.add(TimerWidget.newInstance("test","test"));
         fragments1.add(WeatherWidget.newInstance("test","test"));
         fragments1.add(CalendarWidget.newInstance("TEST","TEST"));
+        fragments1.add(DigitalTimerWidget.newInstance("TEST","TEST"));
 
         ArrayList<Fragment> fragments2 = new ArrayList<>();
         fragments2.add(TimerWidget.newInstance("test","test"));
         fragments2.add(WeatherWidget.newInstance("test","test"));
         fragments2.add(CalendarWidget.newInstance("TEST","TEST"));
+        fragments2.add(DigitalTimerWidget.newInstance("TEST","TEST"));
 
         viewPager1 = (ViewPager2) findViewById(R.id.viewPager);
         ViewPager2Adapter viewPager2Adapter = new ViewPager2Adapter(this, fragments);

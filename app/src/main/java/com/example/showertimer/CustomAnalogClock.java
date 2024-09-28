@@ -61,8 +61,8 @@ public class CustomAnalogClock extends View {
         float second = calendar.get(Calendar.SECOND);
 
         // 시침, 분침, 초침 그리기
-        drawHand(canvas, (hour + minute / 60) * 30, radius * 0.5f, Color.BLACK); // 시침
-        drawHand(canvas, minute * 6, radius * 0.7f, Color.BLACK); // 분침
+        drawHand(canvas, (hour + minute / 60) * 30, radius * 0.5f, Color.WHITE); // 시침
+        drawHand(canvas, minute * 6, radius * 0.7f, Color.WHITE); // 분침
         drawHand(canvas, second * 6, radius * 0.9f, Color.RED); // 초침
     }
 

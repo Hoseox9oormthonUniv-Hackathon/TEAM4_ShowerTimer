@@ -87,6 +87,7 @@ public class WeatherWidget extends Fragment {
 
         return view;
     }
+
     private void getWeatherInfo() {
         try {
             // 네이버 날씨 페이지 URL
@@ -118,10 +119,6 @@ public class WeatherWidget extends Fragment {
             String integerTempValue = tempValue.split("\\.")[0]; // 소수점 이하 제거
             tvNowTemp.setText(integerTempValue + "°C"); // 현재 온도 설정
 
-            Log.e("test",fullNowTemp);
-            Log.e("test1",tempValue);
-            Log.e("test2",integerTempValue);
-
             // 날씨 정보
             tvInfo.setText(infoElement.text()); // 날씨 정보 설정
 
@@ -135,5 +132,4 @@ public class WeatherWidget extends Fragment {
             e.printStackTrace();
         }
     }
-
 }
