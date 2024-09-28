@@ -6,4 +6,15 @@
     </style>
 
     <style name="Theme.ShowerTimer" parent="Base.Theme.ShowerTimer" />
+
+    <!--Splash Theme -->
+    <style name="AppTheme.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/black</item>
+        <item name="windowSplashScreenAnimatedIcon">@color/black</item>
+        <item name="windowSplashScreenAnimationDuration">@color/black</item>
+        <item name="postSplashScreenTheme">@style/Theme.SplashScreen</item>
+
+
+
+    </style>
 </resources>
