@@ -3,51 +3,52 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <!-- 질문 텍스트 -->
     <TextView
-        android:id="@+id/tv_toothbrush_question"
+        android:id="@+id/tv_shaving_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:layout_marginBottom="100dp"
-        android:text="당신의 양치 시간은 어떻게 되나요?"
+        android:text="당신의 면도 시간은 어떻게 되나요?"
         android:textStyle="bold"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/iv_toothbrush"
+        app:layout_constraintBottom_toTopOf="@+id/iv_shaving"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- 칫솔 이미지 -->
+    <!-- 샤워 이미지 -->
+
     <ImageView
-        android:id="@+id/iv_toothbrush"
+        android:id="@+id/iv_shaving"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="8dp"
-        android:src="@drawable/initial_toothbrush"
-        app:layout_constraintBottom_toTopOf="@+id/tv_toothbrush_time"
+        android:layout_marginBottom="68dp"
+        android:src="@drawable/initial_shaving"
+        app:layout_constraintBottom_toTopOf="@+id/tv_shaving_time"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <!-- 마이너스 버튼 -->
-
-    <ImageView
+    <ImageButton
         android:id="@+id/iv_minus_btn"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginEnd="50dp"
         android:src="@drawable/initial_minus_btn"
-        app:layout_constraintTop_toBottomOf="@+id/iv_toothbrush"
-        app:layout_constraintEnd_toStartOf="@+id/tv_toothbrush_time"
-        android:layout_marginTop="100dp" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_shaving"
+        app:layout_constraintEnd_toStartOf="@+id/tv_shaving_time"
+        android:layout_marginTop="100dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"/>
 
     <TextView
-        android:id="@+id/tv_toothbrush_time"
+        android:id="@+id/tv_shaving_time"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="104dp"
@@ -56,28 +57,34 @@
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_toothbrush" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_shaving" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/iv_plus_btn"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="100dp"
         android:src="@drawable/initial_plus_btn"
-        app:layout_constraintStart_toEndOf="@+id/tv_toothbrush_time"
-        app:layout_constraintTop_toBottomOf="@+id/iv_toothbrush" />
+        app:layout_constraintStart_toEndOf="@+id/tv_shaving_time"
+        app:layout_constraintTop_toBottomOf="@+id/iv_shaving"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"/>
 
-    <ImageView
+    <ImageButton
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:src="@drawable/initial_check_off"
         app:layout_constraintTop_toBottomOf="@id/iv_minus_btn"
         android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="120dp"/>
+        android:layout_marginStart="120dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"/>
 
-    <ImageView
+    <ImageButton
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:src="@drawable/initial_check_on"
@@ -85,7 +92,10 @@
         android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="120dp"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -96,5 +106,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginLeft="20dp"/>
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/initial_next"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="다음"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
