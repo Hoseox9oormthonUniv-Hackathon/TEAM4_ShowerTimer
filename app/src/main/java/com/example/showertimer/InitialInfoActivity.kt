@@ -74,6 +74,12 @@ class InitialInfoActivity : AppCompatActivity() {
             overridePendingTransition(R.anim.none, R.anim.none)
         }
 
+        binding.ibNext.setOnClickListener{
+            var intent = Intent(this, SetupActivity::class.java)
+            startActivity(intent)
+        }
+
+
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {

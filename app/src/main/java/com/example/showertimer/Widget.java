@@ -23,9 +23,6 @@ public class Widget extends AppCompatActivity {
     private ViewPager2 viewPager1;
     private ViewPager2 viewPager2;
     private ViewPager2 viewPager3;
-    private Runnable runnable;
-
-    private TextView tvSchedule;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +46,6 @@ public class Widget extends AppCompatActivity {
         viewPager1 = (ViewPager2) findViewById(R.id.viewPager);
         ViewPager2Adapter viewPager2Adapter = new ViewPager2Adapter(this, fragments);
         viewPager1.setOrientation(ViewPager2.ORIENTATION_VERTICAL);
-        //viewPager2.post();
         viewPager1.setAdapter(viewPager2Adapter);
 
         viewPager2 = (ViewPager2) findViewById(R.id.viewPager2);

@@ -1,15 +1,10 @@
 package com.example.showertimer;
 
 
-import android.Manifest;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -122,6 +117,10 @@ public class WeatherWidget extends Fragment {
             String tempValue = fullNowTemp.replaceAll("[^0-9.]", ""); // 숫자와 '.' 이외의 문자 제거
             String integerTempValue = tempValue.split("\\.")[0]; // 소수점 이하 제거
             tvNowTemp.setText(integerTempValue + "°C"); // 현재 온도 설정
+
+            Log.e("test",fullNowTemp);
+            Log.e("test1",tempValue);
+            Log.e("test2",integerTempValue);
 
             // 날씨 정보
             tvInfo.setText(infoElement.text()); // 날씨 정보 설정
