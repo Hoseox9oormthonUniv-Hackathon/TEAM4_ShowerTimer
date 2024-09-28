@@ -16,6 +16,6 @@ class MainActivity : AppCompatActivity() {
 
         val intent = Intent(this, ToothbrushActivity::class.java)
         startActivity(intent)
-        //test
+        //testtestestsetsetstsetset
     }
 }
