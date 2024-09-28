@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         startBtn.setOnClickListener {
             val intent = Intent(this, ShowerActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.none, R.anim.none)
         }
     }
 }

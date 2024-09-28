@@ -65,6 +65,7 @@ class ShavingActivity : AppCompatActivity() {
             intent.putExtra("세안 여부", isCleansing)
             intent.putExtra("면도 여부", isShaving)
             startActivity(intent)
+            overridePendingTransition(R.anim.none, R.anim.none)
         }
 
         binding.ibShavingBack.setOnClickListener {

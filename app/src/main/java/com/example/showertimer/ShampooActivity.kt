@@ -60,6 +60,7 @@ class ShampooActivity : AppCompatActivity() {
             intent.putExtra("샴푸 시간", count)
             intent.putExtra("샴푸 여부", isShampoo)
             startActivity(intent)
+            overridePendingTransition(R.anim.none, R.anim.none)
         }
 
         binding.ibShampooBack.setOnClickListener {

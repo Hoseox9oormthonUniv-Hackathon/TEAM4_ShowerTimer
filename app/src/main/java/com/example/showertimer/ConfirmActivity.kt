@@ -14,6 +14,8 @@ class ConfirmActivity : AppCompatActivity() {
         finishBtn.setOnClickListener {
             val intent = Intent(this, StartActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.none, R.anim.none)
         }
     }
+
 }

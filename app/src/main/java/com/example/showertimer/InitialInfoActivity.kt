@@ -58,13 +58,14 @@ class InitialInfoActivity : AppCompatActivity() {
         }
 
         binding.ibInfoNext.setOnClickListener {
-            val intent = Intent(this, StartActivity::class.java)
+            val intent = Intent(this, ConfirmActivity::class.java)
             intent.putExtra("최종 샤워 시간", showerTime)
             intent.putExtra("최종 샴푸 시간", shampooTime)
             intent.putExtra("최종 세안 시간", cleansingTime)
             intent.putExtra("최종 면도 시간", shavingTime)
             intent.putExtra("최종 양치 시간", toothTime)
             startActivity(intent)
+            overridePendingTransition(R.anim.none, R.anim.none)
         }
 
         binding.ibInfoBack.setOnClickListener {

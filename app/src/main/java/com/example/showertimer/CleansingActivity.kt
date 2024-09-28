@@ -61,6 +61,7 @@ class CleansingActivity : AppCompatActivity() {
             intent.putExtra("샴푸 여부", isShampoo)
             intent.putExtra("세안 여부", isCleansing)
             startActivity(intent)
+            overridePendingTransition(R.anim.none, R.anim.none)
         }
 
         binding.ibCleansingBack.setOnClickListener {

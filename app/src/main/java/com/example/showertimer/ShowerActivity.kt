@@ -43,6 +43,7 @@ class ShowerActivity : AppCompatActivity() {
             val intent = Intent(this, ShampooActivity::class.java)
             intent.putExtra("샤워 시간", count)
             startActivity(intent)
+            overridePendingTransition(R.anim.none, R.anim.none)
         }
 
         binding.ibShowerBack.setOnClickListener {

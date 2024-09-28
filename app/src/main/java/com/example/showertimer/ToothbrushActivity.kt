@@ -71,6 +71,7 @@ class ToothbrushActivity : AppCompatActivity() {
             intent.putExtra("면도 여부", isShaving)
             intent.putExtra("양치 여부", isToothbrush)
             startActivity(intent)
+            overridePendingTransition(R.anim.none, R.anim.none)
         }
 
         binding.ibToothBack.setOnClickListener {
