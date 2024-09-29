@@ -74,6 +74,19 @@ class InitialInfoActivity : AppCompatActivity() {
             overridePendingTransition(R.anim.none, R.anim.none)
         }
 
+        binding.ibInfoNext.setOnClickListener{
+
+            intent.putExtra("세안 시간", cleansingTime)
+            intent.putExtra("양치 시간", toothTime)
+            intent.putExtra("샤워 시간", showerTime)
+            intent.putExtra("샴푸 시간", shampooTime)
+            intent.putExtra("면도 시간", shavingTime)
+
+            var intent = Intent(this, ConfirmActivity::class.java)
+            startActivity(intent)
+        }
+
+
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {

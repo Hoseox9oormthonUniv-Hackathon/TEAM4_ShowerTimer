@@ -8,8 +8,8 @@
         <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
+            <option value="$USER_HOME$/devel/android/flutter/TEAM4_ShowerTimer" />
+            <option value="$USER_HOME$/devel/android/flutter/TEAM4_ShowerTimer/app" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
