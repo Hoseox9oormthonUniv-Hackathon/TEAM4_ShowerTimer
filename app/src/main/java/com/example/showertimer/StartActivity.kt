@@ -27,8 +27,9 @@ class StartActivity : AppCompatActivity() {
         setContentView(R.layout.activity_start)
 
         binding.btnMenu3.setOnClickListener {
-            val intent = Intent(this, ShowerActivity::class.java)
-            startActivity(intent)
+            val intentFirst = Intent(this, ShowerActivity::class.java)
+//            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            startActivity(intentFirst)
         }
 
         var toothTime = intent.getIntExtra("최종 양치 시간", 3)
