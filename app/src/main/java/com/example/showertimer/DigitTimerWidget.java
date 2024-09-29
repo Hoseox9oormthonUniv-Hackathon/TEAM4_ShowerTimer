@@ -42,8 +42,8 @@ public class DigitTimerWidget extends Fragment {
         // Required empty public constructor
     }
 
-    public static EndActivity newInstance(ArrayList<Integer> timer) {
-        EndActivity fragment = new EndActivity();
+    public static DigitTimerWidget newInstance(ArrayList<Integer> timer) {
+        DigitTimerWidget fragment = new DigitTimerWidget();
         Bundle args = new Bundle();
         args.putIntegerArrayList("Timer", timer);
         fragment.setArguments(args);

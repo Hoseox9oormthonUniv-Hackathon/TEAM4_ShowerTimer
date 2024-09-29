@@ -23,7 +23,6 @@ public class EndActivity extends AppCompatActivity {
 
 
         ArrayList<Fragment> fragments = new ArrayList<>();
-
         fragments.add(DryTimer.newInstance(300));
 
         viewPager1 = (ViewPager2) findViewById(R.id.viewPager);
