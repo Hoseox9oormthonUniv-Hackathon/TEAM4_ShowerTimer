@@ -1,5 +1,6 @@
 package com.example.showertimer
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.KeyEvent
@@ -19,11 +20,16 @@ class StartActivity : AppCompatActivity() {
 //    private var isShampoo = intent.getBooleanExtra("샴푸 여부", true)
 //    private var isShaving = intent.getBooleanExtra("면도 여부", true)
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
 
-//        val btn = findViewById<ImageButton>(R.id.ib_start)
+        val btn = findViewById<ImageButton>(R.id.ib_start_btn)
+        btn.setOnClickListener{
+            val intent = Intent(this, TimerActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private var backPressedTime: Long = 0

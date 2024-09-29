@@ -73,6 +73,7 @@
     <ImageButton
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:id="@+id/ib_start_btn"
         android:adjustViewBounds="true"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
