@@ -3,7 +3,6 @@ package com.example.showertimer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -11,7 +10,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import java.util.ArrayList;
 
-public class Widget extends AppCompatActivity implements DigitTimerWidget.TimerListener {
+public class Widget extends AppCompatActivity implements DryerTimer.TimerListener {
 
     private ViewPager2 viewPager1;
     private ViewPager2 viewPager2;
@@ -33,15 +32,15 @@ public class Widget extends AppCompatActivity implements DigitTimerWidget.TimerL
 
         ArrayList<Integer> timer = new ArrayList<>();
 
-        timer.add(toothTime);
         timer.add(showerTime);
         timer.add(shampooTime);
-        timer.add(shavingTime);
         timer.add(cleansingTime);
+        timer.add(shavingTime);
+        timer.add(toothTime);
 
         ArrayList<Fragment> fragments = new ArrayList<>();
 
-        fragments.add(DigitTimerWidget.newInstance(timer));
+        fragments.add(DryerTimer.newInstance(timer));
         //fragments.add(DigitTimerWidget.newInstance(showerTime));
         //fragments.add(DigitTimerWidget.newInstance(shampooTime));
 

@@ -2,16 +2,18 @@ package com.example.showertimer;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
 import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -22,24 +24,26 @@ import java.util.Locale;
  * create an instance of this fragment.
  */
 
-public class DryerTimerWidget extends Fragment {
+public class DryerTimer extends Fragment {
 
     private static final String ARG_TIME = "time"; // 남은 시간을 위한 인자
 
-    private TextView digitalClockTextView;
+    private TextView digitalClockTextView, timerNameTextView;
     private Handler handler;
     private Runnable runnable;
 
     private ArrayList<Integer> timer1;
     private int count = 0;
     private int remainingTime = 0; // 남은 시간 (초 단위)
+    private String[] name = {"샤워","샴푸","세안","면도","양치"};
+    private boolean flag = false;
 
-    public DryerTimerWidget() {
+    public DryerTimer() {
         // Required empty public constructor
     }
 
-    public static DryerTimerWidget newInstance(ArrayList<Integer> timer) {
-        DryerTimerWidget fragment = new DryerTimerWidget();
+    public static DryerTimer newInstance(ArrayList<Integer> timer) {
+        DryerTimer fragment = new DryerTimer();
         Bundle args = new Bundle();
         args.putIntegerArrayList("Timer", timer);
         fragment.setArguments(args);
@@ -80,38 +84,46 @@ public class DryerTimerWidget extends Fragment {
         View view = inflater.inflate(R.layout.fragment_digital_timer_widget, container, false);
 
         digitalClockTextView = view.findViewById(R.id.digitalClockTextView);
+        timerNameTextView = view.findViewById(R.id.TimerName);
 
         handler = new Handler();
 
         runnable = new Runnable() {
             @Override
             public void run() {
+                try {
+                    if (count <= timer1.size()) {
+                        if (remainingTime <= 0) {
+                            remainingTime = timer1.get(count);
+                            timerNameTextView.setText(name[count]);
+                            count++;
+                            Log.e("IMHERE", "IMHEREee" + remainingTime);
+                        }
 
-                if (count < timer1.size()+1) {
-                    if(remainingTime <= 0) {
-                        remainingTime = timer1.get(count);
-                        count++;
-                        Log.e("IMHERE","IMHEREee"+remainingTime);
-                    }
-                    if (remainingTime > 0) {
-                        // 남은 시간을 HH:mm 형식으로 변환
-                        int minutes = remainingTime / 60;
-                        int seconds = remainingTime % 60;
-                        String time = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
-                        digitalClockTextView.setText(time); // TextView에 시간 설정
-                        remainingTime--; // 1초 줄이기
-                        Log.e("IMHERE","IMHERE"+remainingTime);
-                        handler.postDelayed(this, 1000); // 1초마다 갱신
-                    } else {
+                        if (remainingTime > 0) {
+                            // 남은 시간을 HH:mm 형식으로 변환
+                            int minutes = remainingTime / 60;
+                            int seconds = remainingTime % 60;
+                            String time = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+                            digitalClockTextView.setText(time); // TextView에 시간 설정
+                            remainingTime--; // 1초 줄이기
+                            Log.e("IMHERE", "IMHERE" + remainingTime);
+                            handler.postDelayed(this, 1000); // 1초마다 갱신
+                        } else {
+                            Log.e("IMHERE", "IMHEASDFA" + String.valueOf(count));
+                            digitalClockTextView.setText("00:00"); // 0 초일 때 표시
 
-                        digitalClockTextView.setText("00:00"); // 0 초일 때 표시
-                        handler.removeCallbacks(this); // 타이머 중지
+                            if (listener != null && count == 4) {
+                                Log.e("IMHERE", "Finish");
+                                listener.onTimerFinished(); // 액티비티에 알림
+                            }
 
-                        if (listener != null ) {
-                            Log.e("IMHERE","Finish");
-                            listener.onTimerFinished(); // 액티비티에 알림
+                            handler.removeCallbacks(this); // 타이머 중지
                         }
                     }
+                } catch(IndexOutOfBoundsException e){
+                    Intent intent = new Intent(getContext(), EndActivity.class);
+                    startActivity(intent);
                 }
             }
         };
