@@ -1,21 +1,41 @@
 package com.example.showertimer
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.showertimer.databinding.ActivityStartBinding
 
 class StartActivity : AppCompatActivity() {
+
+//    private var toothTime = intent.getIntExtra("최종 양치 시간", 3)
+//    private var showerTime = intent.getIntExtra("최종 샤워 시간", 15)
+//    private var shampooTime = intent.getIntExtra("최종 샴푸 시간", 5)
+//    private var shavingTime = intent.getIntExtra("최종 면도 시간", 3)
+//    private var cleansingTime = intent.getIntExtra("최종 세안 시간", 2)
+
+//    private var isCleansing = intent.getBooleanExtra("세안 여부", true)
+//    private var isShampoo = intent.getBooleanExtra("샴푸 여부", true)
+//    private var isShaving = intent.getBooleanExtra("면도 여부", true)
+    lateinit var binding: ActivityStartBinding
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
 
-        var toothTime = intent.getIntExtra("양치 시간", 3)
-        var showerTime = intent.getIntExtra("샤워 시간", 15)
-        var shampooTime = intent.getIntExtra("샴푸 시간", 5)
-        var shavingTime = intent.getIntExtra("면도 시간", 3)
-        var cleansingTime = intent.getIntExtra("세안 시간", 2)
+        binding.btnMenu3.setOnClickListener {
+            val intent = Intent(this, ShowerActivity::class.java)
+            startActivity(intent)
+        }
+
+        var toothTime = intent.getIntExtra("최종 양치 시간", 3)
+        var showerTime = intent.getIntExtra("최종 샤워 시간", 15)
+        var shampooTime = intent.getIntExtra("최종 샴푸 시간", 5)
+        var shavingTime = intent.getIntExtra("최종 면도 시간", 3)
+        var cleansingTime = intent.getIntExtra("최종 세안 시간", 2)
 
 
         val startBtn = findViewById<ImageButton>(R.id.btn_menu2)
