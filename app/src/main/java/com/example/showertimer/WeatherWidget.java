@@ -72,11 +72,8 @@ public class WeatherWidget extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_weather_widget,container, false);
         // Inflate the layout for this fragment
-        tvLocation = view.findViewById(R.id.tv_location);
         tvNowTemp = view.findViewById(R.id.tv_nowtemp);
         tvInfo = view.findViewById(R.id.tv_info);
-        tvFeelTemp = view.findViewById(R.id.tv_feeltemp);
-        tvHumidity = view.findViewById(R.id.tv_humidity);
 
         // 네트워크 정책 설정 (메인 스레드에서 네트워크 작업 허용)
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();

@@ -17,7 +17,8 @@ class StartActivity : AppCompatActivity() {
         var shavingTime = intent.getIntExtra("면도 시간", 3)
         var cleansingTime = intent.getIntExtra("세안 시간", 2)
 
-        val startBtn = findViewById<ImageButton>(R.id.startBtn)
+
+        val startBtn = findViewById<ImageButton>(R.id.btn_menu2)
         startBtn.setOnClickListener {
 
             intent.putExtra("세안 시간", cleansingTime)
@@ -29,7 +30,7 @@ class StartActivity : AppCompatActivity() {
             val intent = Intent(this, Widget::class.java)
             startActivity(intent)
         }
-//        val btn = findViewById<ImageButton>(R.id.ib_start)
+
     }
 
     private var backPressedTime: Long = 0

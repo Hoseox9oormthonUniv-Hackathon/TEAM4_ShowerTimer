@@ -71,7 +71,7 @@ public class DigitalClockWidget extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_digital_timer_widget, container, false);
+        View view = inflater.inflate(R.layout.fragment_ditialclock_widget, container, false);
 
         digitalClockTextView = view.findViewById(R.id.digitalClockTextView);
         handler = new Handler();

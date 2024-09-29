@@ -74,7 +74,7 @@ class InitialInfoActivity : AppCompatActivity() {
             overridePendingTransition(R.anim.none, R.anim.none)
         }
 
-        binding.ibNext.setOnClickListener{
+        binding.ibInfoNext.setOnClickListener{
 
             intent.putExtra("세안 시간", cleansingTime)
             intent.putExtra("양치 시간", toothTime)

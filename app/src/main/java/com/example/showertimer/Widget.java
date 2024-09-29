@@ -46,12 +46,12 @@ public class Widget extends AppCompatActivity implements DigitTimerWidget.TimerL
         //fragments.add(DigitTimerWidget.newInstance(shampooTime));
 
         ArrayList<Fragment> fragments1 = new ArrayList<>();
-        fragments1.add(DigitalClockWidget.newInstance("TEST","TEST"));
         fragments1.add(AnalogClock.newInstance("test","test"));
+        fragments1.add(DigitalClockWidget.newInstance("TEST","TEST"));
 
         ArrayList<Fragment> fragments2 = new ArrayList<>();
-        fragments2.add(CalendarWidget.newInstance("TEST","TEST"));
         fragments2.add(WeatherWidget.newInstance("test","test"));
+        fragments2.add(CalendarWidget.newInstance("TEST","TEST"));
 
         viewPager1 = (ViewPager2) findViewById(R.id.viewPager);
         ViewPager2Adapter viewPager2Adapter = new ViewPager2Adapter(this, fragments);

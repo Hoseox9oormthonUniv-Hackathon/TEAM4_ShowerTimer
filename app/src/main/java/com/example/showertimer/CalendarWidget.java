@@ -144,7 +144,7 @@ public class CalendarWidget extends Fragment {
             tvSchedule.setText(eventList.toString());
             cursor.close();
         } else {
-            tvSchedule.setText("오늘 일정이 없습니다.");
+            tvSchedule.setText("오늘 일정이 없어요.");
         }
     }
 }

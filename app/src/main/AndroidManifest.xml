@@ -15,22 +15,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ShowerTimer"
         tools:targetApi="31">
-        <activity
-            android:name=".EndActivity"
-            android:exported="false" />
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".ToothbrushActivity" />
-        <activity android:name=".ShowerActivity" />
-        <activity android:name=".ShavingActivity" />
-        <activity android:name=".ShampooActivity" />
-        <activity android:name=".CleansingActivity" />
-        <activity android:name=".InitialInfoActivity" />
-        <activity android:name=".SetupActivity" />
-        <activity android:name=".Widget" />
-        <activity android:name=".ConfirmActivity" />
-        <activity android:name=".StartActivity" />
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".ToothbrushActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".ShowerActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".ShavingActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".ShampooActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".CleansingActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".InitialInfoActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".SetupActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".Widget"
+            android:theme="@style/AppTheme.BlackStatusBar"/>
+        <activity android:name=".ConfirmActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".StartActivity"
+            android:theme="@style/AppTheme"/>
         <activity
             android:name=".SplashActivity"
+            android:theme="@style/AppTheme"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
