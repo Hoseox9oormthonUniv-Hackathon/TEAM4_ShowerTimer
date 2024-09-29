@@ -33,11 +33,11 @@ public class Widget extends AppCompatActivity implements DigitTimerWidget.TimerL
 
         ArrayList<Integer> timer = new ArrayList<>();
 
-        timer.add(toothTime);
         timer.add(showerTime);
         timer.add(shampooTime);
-        timer.add(shavingTime);
         timer.add(cleansingTime);
+        timer.add(shavingTime);
+        timer.add(toothTime);
 
         ArrayList<Fragment> fragments = new ArrayList<>();
 

@@ -29,7 +29,7 @@ public class WeatherWidget extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
 
-    private TextView tvLocation, tvNowTemp, tvInfo, tvFeelTemp, tvHumidity;
+    private TextView tvNowTemp, tvInfo;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -107,9 +107,6 @@ public class WeatherWidget extends Fragment {
             Elements feelTempElement = document.select(feelTempSelector);
             Elements humidityElement = document.select(humiditySelector);
 
-            // 위치 설정
-            tvLocation.setText(locationElement.text()); // 위치 정보 설정
-
             // 현재 온도 (숫자 부분만 추출하고 소수점 이하 제거)
             String fullNowTemp = nowTempElement.text(); // "현재 온도 22.0°"와 같은 텍스트
             String tempValue = fullNowTemp.replaceAll("[^0-9.]", ""); // 숫자와 '.' 이외의 문자 제거
@@ -118,12 +115,6 @@ public class WeatherWidget extends Fragment {
 
             // 날씨 정보
             tvInfo.setText(infoElement.text()); // 날씨 정보 설정
-
-            // 체감 온도
-            tvFeelTemp.setText(feelTempElement.text()); // 체감 온도 설정
-
-            // 습도
-            tvHumidity.setText(humidityElement.text()); // 습도 설정
 
         } catch (IOException e) {
             e.printStackTrace();
