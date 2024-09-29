@@ -10,16 +10,12 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Locale;
 
 /**
@@ -46,8 +42,8 @@ public class DigitTimerWidget extends Fragment {
         // Required empty public constructor
     }
 
-    public static DigitTimerWidget newInstance(ArrayList<Integer> timer) {
-        DigitTimerWidget fragment = new DigitTimerWidget();
+    public static EndActivity newInstance(ArrayList<Integer> timer) {
+        EndActivity fragment = new EndActivity();
         Bundle args = new Bundle();
         args.putIntegerArrayList("Timer", timer);
         fragment.setArguments(args);

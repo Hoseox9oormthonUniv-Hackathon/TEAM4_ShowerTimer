@@ -16,7 +16,7 @@ class StartActivity : AppCompatActivity() {
 //    private var shavingTime = intent.getIntExtra("최종 면도 시간", 3)
 //    private var cleansingTime = intent.getIntExtra("최종 세안 시간", 2)
 
-//    private var isCleansing = intent.getBooleanExtra("세안 여부", true)
+    //    private var isCleansing = intent.getBooleanExtra("세안 여부", true)
 //    private var isShampoo = intent.getBooleanExtra("샴푸 여부", true)
 //    private var isShaving = intent.getBooleanExtra("면도 여부", true)
     lateinit var binding: ActivityStartBinding
