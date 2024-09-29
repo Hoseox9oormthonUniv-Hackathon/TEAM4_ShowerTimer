@@ -41,6 +41,12 @@ class StartActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val btnMenu2 = findViewById<ImageButton>(R.id.btn_menu2)
+        btnMenu2.setOnClickListener {
+            //val intent = Intent(this, ::class.java)
+            //startActivity(intent)
+        }
+
         val startBtn = findViewById<ImageButton>(R.id.btn_menu2)
         startBtn.setOnClickListener {
 

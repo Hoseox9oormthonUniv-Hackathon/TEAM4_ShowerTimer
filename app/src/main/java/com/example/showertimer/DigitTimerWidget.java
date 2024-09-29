@@ -111,14 +111,11 @@ public class DigitTimerWidget extends Fragment {
                             String time = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
                             digitalClockTextView.setText(time); // TextView에 시간 설정
                             remainingTime--; // 1초 줄이기
-                            Log.e("IMHERE", "IMHERE" + remainingTime);
                             handler.postDelayed(this, 1000); // 1초마다 갱신
                         } else {
-                            Log.e("IMHERE", "IMHEASDFA" + String.valueOf(count));
                             digitalClockTextView.setText("00:00"); // 0 초일 때 표시
 
                             if (listener != null && count == 4) {
-                                Log.e("IMHERE", "Finish");
                                 listener.onTimerFinished(); // 액티비티에 알림
                             }
 
