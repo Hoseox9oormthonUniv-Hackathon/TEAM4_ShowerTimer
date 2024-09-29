@@ -26,10 +26,7 @@ class StartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
 
-        binding.btnMenu3.setOnClickListener {
-            val intent = Intent(this, ShowerActivity::class.java)
-            startActivity(intent)
-        }
+
 
         var toothTime = intent.getIntExtra("최종 양치 시간", 3)
         var showerTime = intent.getIntExtra("최종 샤워 시간", 15)
@@ -37,6 +34,12 @@ class StartActivity : AppCompatActivity() {
         var shavingTime = intent.getIntExtra("최종 면도 시간", 3)
         var cleansingTime = intent.getIntExtra("최종 세안 시간", 2)
 
+
+        val btnMenu3 = findViewById<ImageButton>(R.id.btn_menu3)
+        btnMenu3.setOnClickListener {
+            val intent = Intent(this, ShowerActivity::class.java)
+            startActivity(intent)
+        }
 
         val startBtn = findViewById<ImageButton>(R.id.btn_menu2)
         startBtn.setOnClickListener {
